@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    Teeshter
+ * @package     Teeshter_PromoNotification
+ * @author      teeshter
+ */
+-->
+<config>
+    <modules>
+        <Teeshter_PromoNotification>
+            <version>0.1.0</version>
+        </Teeshter_PromoNotification>
+    </modules>
+    <global>
+        <models>
+            <teeshter_promonotification>
+                <class>Teeshter_PromoNotification_Model</class>
+                <resourceModel>teeshter_promonotification_resource</resourceModel>
+            </teeshter_promonotification>
+            <teeshter_promonotification_resource>
+                <class>Teeshter_PromoNotification_Model_Resource</class>
+            </teeshter_promonotification_resource>
+        </models>
+        <helpers>
+            <teeshter_promonotification>
+                <class>Teeshter_PromoNotification_Helper</class>
+            </teeshter_promonotification>
+        </helpers>
+        <template>
+            <email>
+                <promo_notification_email_template translate="label" module="teeshter_promonotification">
+                    <label>Promotion notification</label>
+                    <file>promo_notification.html</file>
+                    <type>html</type>
+                </promo_notification_email_template>
+            </email>
+        </template>
+    </global>
+    <crontab>
+        <jobs>
+            <teeshter_promonotification_check_all_stores_promo_item_total_qty_ordered>
+                <schedule>
+                    <cron_expr>21 1 * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>teeshter_promonotification/observer::checkAllStoresPromoItemTotalQtyOrdered</model>
+                </run>
+            </teeshter_promonotification_check_all_stores_promo_item_total_qty_ordered>
+        </jobs>
+    </crontab>
+</config>

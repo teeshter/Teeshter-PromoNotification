@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    Teeshter
+ * @package     Teeshter_PromoNotification
+ * @author      teeshter
+ */
+-->
+<config>
+    <modules>
+        <Teeshter_PromoNotification>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Teeshter_PromoNotification>
+    </modules>
+</config>

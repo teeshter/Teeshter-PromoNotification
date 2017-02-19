@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    Teeshter
+ * @package     Teeshter_PromoNotification
+ * @author      teeshter
+ */
+-->
+<config>
+    <tabs>
+        <teeshter translate="label" module="teeshter_promonotification">
+            <label>Teeshter</label>
+            <sort_order>100</sort_order>
+        </teeshter>
+    </tabs>
+    <sections>
+        <promonotification translate="label" module="teeshter_promonotification">
+            <label>Promo</label>
+            <tab>teeshter</tab>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label" module="teeshter_promonotification">
+                    <label>Promotion Product Settings</label>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <is_active>
+                            <label>Enable Notification</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_active>
+                        <promo_product_id translate="label">
+                            <label>Promo Product ID</label>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>teeshter_promonotification/config_backend_productid</backend_model>
+                            <validate>validate-digits</validate>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </promo_product_id>
+                    </fields>
+                </general>
+            </groups>
+        </promonotification>
+    </sections>
+</config>
